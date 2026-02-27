@@ -2,7 +2,7 @@ var app = new Framework7({
   el: "#app", 
 	theme: "ios",	
   name: 'TrollCheck',
-	id: 'com.Shadow.TrollCheck',
+	id: 'com.TechLxrd.TrollCheck',
 	serviceWorker: {
 		path: "./service-worker.js"
 	}
@@ -31,6 +31,12 @@ function applyDarkModeSetting() {
 }
 
 applyDarkModeSetting();
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".ptr-refresh").forEach(element => {
+    element.addEventListener("ptr:refresh", () => window.location.reload());
+  });
+  checkConnection();
+});
 
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.getRegistration().then(registration => {

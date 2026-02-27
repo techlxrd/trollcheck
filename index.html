@@ -23,7 +23,11 @@
             </div>
           </div>
         </div>
-        <div class="page-content">
+        <div class="page-content ptr-content ptr-refresh" data-ptr-distance="56">
+            <div class="ptr-preloader">
+                <div class="preloader"></div>
+                <div class="ptr-arrow"></div>
+              </div>
             <div class="block inset"><h3>Estimated iOS version: <span id="ios-version"></span></h3></div>
           <div class="block-title">Choose Device</div>
           <div class="list list-strong list-dividers inset">
@@ -47,7 +51,7 @@
            <div class="list list-strong inset accordion-list"> <ul></ul>
     </div>    
         <div class="list list-strong list-dividers media-list inset"><p><ul><li><a href="https://x.com/Outland3r2007/" class="item-link item-content external"><div class="item-media"><i class="f7-icons">logo_twitter</i></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Follow me</div></div></div></a></li><li><a href="https://techlxrd.pages.dev" class="item-link item-content external"><div class="item-media"><i class="f7-icons color-red">document_fill</i></div><div class="item-inner"><div class="item-title-row"><div class="item-title">More projects</div></div></div></a></li>
-        <li><a href="https://github.com/TechLxrd/trollcheck" class="item-link item-content external"><div class="item-media"><i class="f7-icons">logo_github</i></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Source code</div></div></div></a></li> <li class="accordion-item"> <a class="item-link item-content"> <div class="item-inner"> <div class="item-title">Changelog <span class="badge">v2.0</span> </div> </div> </a> <div class="accordion-item-content"> <div class="block"> <p>•Improved logic<br>•Added more devices and versions<br>•Updated UI<br>•Bug fixes and improvements</div> </div> </li></ul>
+        <li><a href="https://github.com/TechLxrd/trollcheck" class="item-link item-content external"><div class="item-media"><i class="f7-icons">logo_github</i></div><div class="item-inner"><div class="item-title-row"><div class="item-title">Source code</div></div></div></a></li> <li class="accordion-item"> <a class="item-link item-content"> <div class="item-inner"> <div class="item-title">Changelog <span class="badge">v2.1</span> </div> </div> </a> <div class="accordion-item-content"> <div class="block"> <p>•Bug fixes and improvements<br>•Added missing versions<br>•Added Pull to refresh</div> </div> </li></ul>
       </div>   
   </div>
   <script src="https://cdn.jsdelivr.net/npm/framework7@9.0.0/framework7-bundle.min.js" crossorigin="anonymous"></script>
@@ -58,20 +62,20 @@ const supportedVersions = [
   '15.0', '15.0.1', '15.0.2', '15.1', '15.1.1', '15.2', '15.2.1', '15.3', '15.3.1', '15.4', '15.4.1', 
   '15.5', '15.5 Beta 4', '15.6', '15.6 Beta 1-4', '15.6.1', 
   '15.7', '15.7.1', '15.7.2', '15.7.3', '15.7.4', '15.7.5', '15.7.6', '15.7.7', '15.7.8', '15.7.9', 
-  '15.8', '15.8.1', '15.8.2', '15.8.3',
-  '16.0', '16.0 Beta 1-5', '16.0.1', '16.0.2', '16.1', '16.1.1', '16.1.2', '16.2', '16.3', '16.4', '16.5', '16.6','16.6.1', '16.7 RC', '17.0 Beta 1-5','17.0'
+  '15.8', '15.8.1', '15.8.2', '15.8.3', '15.8.4', '15.8.5', '15.8.6',
+  '16.0', '16.0 Beta 1-5', '16.0.1', '16.0.2', '16.1', '16.1.1', '16.1.2', '16.2', '16.3', '16.4', '16.5', '16.6','16.6.1', '16.7 RC' ,'17.0 Beta 1-5','17.0'
 ];
 
 const deviceList = [
-  { model: 'iPhone 6s', architecture: 'arm64', minVersion: '9.0', maxVersion: '15.8.4' },
-  { model: 'iPhone 6s Plus', architecture: 'arm64', minVersion: '9.0', maxVersion: '15.8.4' },
-  { model: 'iPhone SE (1st generation)', architecture: 'arm64', minVersion: '9.3', maxVersion: '15.8.4' },
-  { model: 'iPhone 7', architecture: 'arm64', minVersion: '10.0', maxVersion: '15.8.4' },
-  { model: 'iPhone 7 Plus', architecture: 'arm64', minVersion: '10.0', maxVersion: '15.8.4' },
-  { model: 'iPhone 8', architecture: 'arm64', minVersion: '11.0', maxVersion: '16.7.10' },
-  { model: 'iPhone 8 Plus', architecture: 'arm64', minVersion: '11.0', maxVersion: '16.7.10' },
-  { model: 'iPhone X', architecture: 'arm64e', minVersion: '12.0', maxVersion: '16.7.10' },
-  { model: 'iPhone XR', architecture: 'arm64e', minVersion: '12.0', maxVersion: '18.7.2' },
+  { model: 'iPhone 6s', architecture: 'arm64', minVersion: '9.0', maxVersion: '15.8.6' },
+  { model: 'iPhone 6s Plus', architecture: 'arm64', minVersion: '9.0', maxVersion: '15.8.6' },
+  { model: 'iPhone SE (1st generation)', architecture: 'arm64', minVersion: '9.3', maxVersion: '15.8.6' },
+  { model: 'iPhone 7', architecture: 'arm64', minVersion: '10.0', maxVersion: '15.8.6' },
+  { model: 'iPhone 7 Plus', architecture: 'arm64', minVersion: '10.0', maxVersion: '15.8.6' },
+  { model: 'iPhone 8', architecture: 'arm64', minVersion: '11.0', maxVersion: '16.7.14' },
+  { model: 'iPhone 8 Plus', architecture: 'arm64', minVersion: '11.0', maxVersion: '16.7.14' },
+  { model: 'iPhone X', architecture: 'arm64e', minVersion: '12.0', maxVersion: '16.7.14' },
+  { model: 'iPhone XR', architecture: 'arm64e', minVersion: '12.0', maxVersion: '18.7.5' },
   { model: 'iPhone XS', architecture: 'arm64e', minVersion: '12.0', maxVersion: '18.7.2' },
   { model: 'iPhone XS Max', architecture: 'arm64e', minVersion: '12.0', maxVersion: '18.7.2' },
   { model: 'iPhone 11', architecture: 'arm64e', minVersion: '13.0', maxVersion: '27.0' },
@@ -128,23 +132,23 @@ const deviceList = [
   { model: 'iPad (10th generation)', architecture: 'arm64e', minVersion: '16.1', maxVersion: '99.9' },
   { model: 'iPad (9th generation)', architecture: 'arm64e', minVersion: '15.0', maxVersion: '99.9' },
   { model: 'iPad (8th generation)', architecture: 'arm64e', minVersion: '14.0', maxVersion: '99.9' },
-  { model: 'iPad (7th generation)', architecture: 'arm64', minVersion: '13.1', maxVersion: '17.7.2' },
-  { model: 'iPad (6th generation)', architecture: 'arm64', minVersion: '11.3', maxVersion: '17.7.2' },
-  { model: 'iPad (5th generation)', architecture: 'arm64', minVersion: '10.3', maxVersion: '16.7.10' },
-  { model: 'iPad Pro 12.9-inch (2nd generation)', architecture: 'arm64', minVersion: '10.3.2', maxVersion: '17.7.2' },
-  { model: 'iPad Pro 10.5-inch', architecture: 'arm64', minVersion: '10.3.2', maxVersion: '17.7.2' },
-  { model: 'iPad Pro 9.7-inch', architecture: 'arm64', minVersion: '9.3', maxVersion: '16.7.10' },
-  { model: 'iPad Pro 12.9-inch (1st generation)', architecture: 'arm64', minVersion: '9.1', maxVersion: '16.7.10' },
-  { model: 'iPad mini 4', architecture: 'arm64', minVersion: '9.0', maxVersion: '15.8.3' },
-  { model: 'iPad Air 2', architecture: 'arm64', minVersion: '8.1', maxVersion: '15.8.3' }
+  { model: 'iPad (7th generation)', architecture: 'arm64', minVersion: '13.1', maxVersion: '17.7.5' },
+  { model: 'iPad (6th generation)', architecture: 'arm64', minVersion: '11.3', maxVersion: '17.7.5' },
+  { model: 'iPad (5th generation)', architecture: 'arm64', minVersion: '10.3', maxVersion: '16.7.14' },
+  { model: 'iPad Pro 12.9-inch (2nd generation)', architecture: 'arm64', minVersion: '10.3.2', maxVersion: '17.7.5' },
+  { model: 'iPad Pro 10.5-inch', architecture: 'arm64', minVersion: '10.3.2', maxVersion: '17.7.5' },
+  { model: 'iPad Pro 9.7-inch', architecture: 'arm64', minVersion: '9.3', maxVersion: '16.7.14' },
+  { model: 'iPad Pro 12.9-inch (1st generation)', architecture: 'arm64', minVersion: '9.1', maxVersion: '16.7.14' },
+  { model: 'iPad mini 4', architecture: 'arm64', minVersion: '9.0', maxVersion: '15.8.6' },
+  { model: 'iPad Air 2', architecture: 'arm64', minVersion: '8.1', maxVersion: '15.8.6' }
 ];
 const iosVersions = [
   '14.0 Beta 2', '14.0', '14.1', '14.2', '14.3', '14.4', '14.4.1', '14.4.2', '14.5', '14.5.1', '14.6', '14.7', '14.7.1', '14.8', '14.8.1',
-  '15.0', '15.0.1', '15.0.2', '15.1', '15.1.1', '15.2', '15.2.1', '15.3', '15.3.1', '15.4', '15.4.1', '15.5', '15.5 Beta 4', '15.6', '15.6 Beta 1-4', '15.6.1', '15.7', '15.7.1', '15.7.2', '15.7.3', '15.7.4', '15.7.5', '15.7.6', '15.7.7', '15.7.8', '15.7.9', '15.8', '15.8.1', '15.8.2', '15.8.3', '15.8.4',
-  '16.0 Beta 1-6', '16.0', '16.0.1', '16.0.2', '16.0.3', '16.1', '16.1.1', '16.1.2', '16.2', '16.3', '16.3.1', '16.4', '16.4.1', '16.5', '16.5.1', '16.6', '16.6.1', '16.7 RC', '16.7', '16.7.1', '16.7.2', '16.7.3', '16.7.4', '16.7.5', '16.7.6', '16.7.7', '16.7.8', '16.7.9', '16.7.10', '16.7.11', '16.7.12',
+  '15.0', '15.0.1', '15.0.2', '15.1', '15.1.1', '15.2', '15.2.1', '15.3', '15.3.1', '15.4', '15.4.1', '15.5', '15.5 Beta 4', '15.6', '15.6 Beta 1-4', '15.6.1', '15.7', '15.7.1', '15.7.2', '15.7.3', '15.7.4', '15.7.5', '15.7.6', '15.7.7', '15.7.8', '15.7.9', '15.8', '15.8.1', '15.8.2', '15.8.3', '15.8.4', '15.8.5', '15.8.6',
+  '16.0 Beta 1-6', '16.0', '16.0.1', '16.0.2', '16.0.3', '16.1', '16.1.1', '16.1.2', '16.2', '16.3', '16.3.1', '16.4', '16.4.1', '16.5', '16.5.1', '16.6', '16.6.1', '16.7 RC', '16.7', '16.7.1', '16.7.2', '16.7.3', '16.7.4', '16.7.5', '16.7.6', '16.7.7', '16.7.8', '16.7.9', '16.7.10', '16.7.11', '16.7.12','16.7.13','16.7.14', 
   '17.0 Beta 1-5', '17.0', '17.0.1', '17.0.2', '17.0.3', '17.1', '17.1.1', '17.1.2', '17.2', '17.2.1', '17.3', '17.3.1', '17.4', '17.4.1', '17.5', '17.5.1', '17.6', '17.6.1', '17.6.2', '17.7',
-  '18.0', '18.0.1', '18.1', '18.2', '18.2.1', '18.3', '18.3.1', '18.3.2', '18.4', '18.4.1', '18.5', '18.6', '18.6.1', '18.6.2', '18.7', '18.7.1', '18.7.2',
-  '26.0', '26.1'
+  '18.0', '18.0.1', '18.1', '18.2', '18.2.1', '18.3', '18.3.1', '18.3.2', '18.4', '18.4.1', '18.5', '18.6', '18.6.1', '18.6.2', '18.7', '18.7.1', '18.7.2', '18.7.3', '18.7.4', '18.7.5',
+  '26.0', '26.1', '26.2', '26.3'
 ];
 
 var selectedDevice = null;
